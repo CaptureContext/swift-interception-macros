@@ -1,1 +1,2 @@
 @_exported import Interception
+@_exported import _InterceptionMacrosDeclarations

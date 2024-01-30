@@ -1,6 +1,6 @@
 import XCTest
 import MacroTesting
-import _SwiftInterceptionCustomSelectorsMacros
+import _InterceptionMacros
 
 final class MethodSelectorTests: XCTestCase {
 	override func invokeTest() {

@@ -17,12 +17,17 @@ let package = Package(
 			name: "InterceptionMacros",
 			type: .static,
 			targets: ["InterceptionMacros"]
+		),
+		.library(
+			name: "_InterceptionMacrosDeclarations",
+			type: .static,
+			targets: ["_InterceptionMacrosDeclarations"]
 		)
 	],
 	dependencies: [
 		.package(
 			url: "https://github.com/capturecontext/swift-interception.git",
-			.upToNextMinor(from: "0.1.0")
+			.upToNextMinor(from: "0.2.0")
 		),
 		.package(
 			url: "https://github.com/stackotter/swift-macro-toolkit.git",
@@ -45,9 +50,17 @@ let package = Package(
 		),
 
 		.target(
-			name: "InterceptionMacros",
+			name: "_InterceptionMacrosDeclarations",
 			dependencies: [
 				.target(name: "_InterceptionMacros"),
+				.product(name: "_InterceptionCustomSelectors", package: "swift-interception")
+			]
+		),
+
+		.target(
+			name: "InterceptionMacros",
+			dependencies: [
+				.target(name: "_InterceptionMacrosDeclarations"),
 				.product(name: "Interception", package: "swift-interception")
 			]
 		),
