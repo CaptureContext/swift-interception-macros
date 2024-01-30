@@ -6,7 +6,7 @@ Macros extension for [`swift-interception`](https://github.com/capturecontext/sw
 
 ## Usage
 
-Observe any selectors on NSObject instances
+Observe selectors on NSObject instances
 
 ```swift
 import InterceptionMacros
@@ -15,7 +15,7 @@ navigationController.setInterceptionHandler(
   for: #methodSelector(UINavigationController.popViewController)
 ) { result in 
   print(result.args) // `animated` flag
-  print(result.output) // popped `UIViewController?``
+  print(result.output) // popped `UIViewController?`
 }
 ```
 
@@ -42,7 +42,7 @@ object.setInterceptionHandler(
 You can add CombineInterception to an Xcode project by adding it as a package dependency.
 
 1. From the **File** menu, select **Swift Packages › Add Package Dependency…**
-2. Enter [`"https://github.com/capturecontext/swift-interception.git"`](https://github.com/capturecontext/swift-interception.git) into the package repository URL text field
+2. Enter [`"https://github.com/capturecontext/swift-interception-macros.git"`](https://github.com/capturecontext/swift-interception-macros.git) into the package repository URL text field
 3. Choose products you need to link them to your project.
 
 ### Recommended
@@ -51,7 +51,7 @@ If you use SwiftPM for your project, you can add CombineInterception to your pac
 
 ```swift
 .package(
-  url: "https://github.com/capturecontext/swift-interception.git", 
+  url: "https://github.com/capturecontext/swift-interception-macros.git", 
   .upToNextMinor(from: "0.1.0")
 )
 ```
