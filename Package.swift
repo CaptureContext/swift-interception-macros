@@ -22,7 +22,7 @@ let package = Package(
 	dependencies: [
 		.package(
 			url: "https://github.com/capturecontext/swift-interception.git",
-			.upToNextMinor(from: "0.0.1")
+			.upToNextMinor(from: "0.1.0")
 		),
 		.package(
 			url: "https://github.com/stackotter/swift-macro-toolkit.git",
